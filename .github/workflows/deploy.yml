@@ -28,8 +28,8 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
-
+        run: npm install
+        
       - name: Build
         run: npm run build
         # 如果你的 package.json 里的 build 命令不一样，这里可能需要调整，但通常是 npm run build
