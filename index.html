@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SoCalBid - Online Auctions</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
     <script>
       tailwind.config = {
         theme: {
@@ -25,17 +30,24 @@
         }
       }
     </script>
+    
+    <!-- Custom CSS -->
     <style>
-      /* Custom tweaks */
+      /* Smooth scrolling is handled by class="scroll-smooth" on html */
+      
+      /* Custom marker colors for lists */
       .marker-blue-600::marker { color: #2563eb; font-weight: bold; }
       .marker-teal-500::marker { color: #14b8a6; }
+      
+      /* Utilities */
+      .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     </style>
   <script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1"
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
   }
 }
 </script>
@@ -49,7 +61,15 @@
           <!-- Logo -->
           <div class="flex-shrink-0 flex items-center">
             <a href="#" class="flex items-center gap-2">
-               <div class="flex flex-col items-center">
+               <!-- 
+                 INSTRUCTIONS: 
+                 1. Rename your logo image file to "logo.png" (or .jpg).
+                 2. Place it in the same folder as this index.html file.
+               -->
+               <img src="logo.png" alt="SoCalBid Logo" class="h-20 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+               
+               <!-- Fallback if image is missing -->
+               <div id="logo-fallback" class="hidden flex-col items-center">
                   <div class="h-12 w-auto flex items-center text-3xl font-extrabold tracking-tighter">
                     <span class="text-[#2c5282]">SoCal</span>
                     <span class="text-[#4fd1c5]">Bid</span>
@@ -67,6 +87,7 @@
             <a href="#contact-us" class="text-gray-700 hover:text-socal-mid font-semibold text-sm uppercase tracking-wide transition-colors">Contact Us</a>
             <a href="#get-notifications" class="text-gray-700 hover:text-socal-mid font-semibold text-sm uppercase tracking-wide transition-colors">Get Notifications</a>
             <button class="text-gray-500 hover:text-socal-mid">
+              <!-- Search Icon -->
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
             </button>
           </nav>
@@ -189,6 +210,7 @@
           <div class="w-full bg-white rounded-xl shadow-lg border-4 border-dashed border-blue-200 p-8 flex flex-col items-center justify-center min-h-[600px] relative overflow-hidden group">
             <div class="text-center space-y-4 max-w-lg z-10">
                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto text-blue-600">
+                 <!-- Camera Icon -->
                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
                </div>
                <h3 class="text-2xl font-bold text-gray-800">HiBid Auction Screenshot Area</h3>
@@ -252,7 +274,8 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-white pt-16 pb-8 border-t border-gray-200" id="contact-us">
+    <!-- Removed pb-8 to fix white space at bottom -->
+    <footer class="bg-white pt-16 pb-0 border-t border-gray-200" id="contact-us">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           
